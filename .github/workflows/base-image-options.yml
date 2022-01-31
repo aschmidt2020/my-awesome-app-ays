@@ -30,27 +30,27 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Multi-Line
         run: |
-          echo ls
+          ls
           echo
-          echo java -version
+          java -version
           echo
-          echo git -version
+          git -version
           echo
-          echo Maven -version
+          Maven -version
           echo
-          echo Gradle -version
+          Gradle -version
           echo
-          echo Ant -version
+          Ant -version
           echo
-          echo $ANDROID_SDK
+          $ANDROID_SDK
           echo
-          echo $SELENIUM_JARS
+          $SELENIUM_JARS
           echo
-          echo $WORKSPACE
+          $WORKSPACE
           echo
-          echo whoami
+          whoami
           echo
-          echo df
+          df
           echo
-          echo env -0 | sort-z | tr '\0'' \n'
+          env -0 | sort-z | tr '\0' '\n'
           echo
