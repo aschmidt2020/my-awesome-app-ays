@@ -42,15 +42,15 @@ jobs:
           # echo
           # Ant -version
           # echo
-          $ANDROID_SDK
+          echo $ANDROID_SDK
           echo
-          $SELENIUM_JARS
+          echo $SELENIUM_JARS
           echo
-          $WORKSPACE
+          echo $WORKSPACE
           echo
           whoami
           echo
           df
           echo
-          env -0 | sort-z | tr '\0' '\n'
+          env -0
           echo
