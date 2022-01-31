@@ -1,6 +1,6 @@
 {
     "name": "my-awesome-app-ays",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Hello World in Node with Express",
     "main": "app.js",
     "scripts": {
