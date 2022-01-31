@@ -4,7 +4,8 @@
     "description": "Hello World in Node with Express",
     "main": "app.js",
     "scripts": {
-        "start": "node app.js"
+        "start": "node app.js",
+        "test": "react-scripts test"
     },
     "author": "Audrey Schmidt",
     "license": "ISC",
