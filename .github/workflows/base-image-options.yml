@@ -34,7 +34,7 @@ jobs:
           echo
           java -version
           echo
-          git -version
+          git --version
           echo
           Maven -version
           echo
