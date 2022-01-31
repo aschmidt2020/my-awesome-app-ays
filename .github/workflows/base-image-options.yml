@@ -36,12 +36,12 @@ jobs:
           echo
           git --version
           echo
-          # Maven -version
-          # echo
-          # Gradle -version
-          # echo
-          # Ant -version
-          # echo
+          mvn --version
+          echo
+          gradle --version
+          echo
+          ant -version
+          echo
           echo $ANDROID_SDK_ROOT
           echo
           echo $SELENIUM_JAR_PATH
