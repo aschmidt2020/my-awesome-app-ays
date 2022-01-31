@@ -44,9 +44,9 @@ jobs:
           # echo
           echo $ANDROID_SDK_ROOT
           echo
-          echo $SELENIUM_JARS_PATH
+          echo $SELENIUM_JAR_PATH
           echo
-          echo $WORKSPACE_RUNNER
+          echo $GITHUB_WORKSPACE
           echo
           whoami
           echo
