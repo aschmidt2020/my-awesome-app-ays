@@ -7,9 +7,9 @@ const APP_PORT = process.env.APP_PORT || 3000; app.get('/', (req, res) => {
         )
 
 }); app.listen(APP_PORT, () => {
-    console.log(`Running app at port:${APP_PORT}.)
-})
+    console.log(`Running app at port:${APP_PORT}.`)
+});
 
 // Simple Node 'Hello World' app for testing Github CI/CD features - added github workflows
 // Added additional workflow with echo commands
-// We will need to add some notes to our PR in order to demo the automated notes function as well.
+// We will need to add some notes to our PR in order to demo the automated notes function as well
