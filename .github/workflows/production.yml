@@ -30,6 +30,10 @@ jobs:
               password: ${{ secrets.DOCKER_TOKEN }}
           - name: Push the Docker image to Docker Hub
             run: docker push --all-tags audreyyyschmidt/my-awesome-app-prod-ays
+          - name: Checkout source code
+            uses: actions/checkout@v2
+          - name: Generate deployment package
+            run: zip -r deploy.zip . -x '*.git*'
           - name: Deploy to AWS EBS
             uses: einaregilsson/beanstalk-deploy@v20
             with:
@@ -37,6 +41,7 @@ jobs:
               aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
               application_name: my-awesome-app-ays
               environment_name: Myawesomeappays-env
-              aws_platform: AWS Elastic Beanstalk
+              version_label: v0.2.2
               region: us-east-1
+              deployment_package: deploy.zip
               
