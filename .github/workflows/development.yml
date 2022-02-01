@@ -9,6 +9,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  DATE_STAMP: $(date+%s)
+
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -18,7 +21,7 @@ jobs:
     steps:
           - uses: actions/checkout@v2
           - name: Env variables
-            run: echo "date-stamp=${{ env.DATE_STAMP }}" >> $GITHUB_ENV
+            run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB_ENV
           - name: Build the Docker image
             run: docker build -f Dockerfile -t audreyyyschmidt/my-awesome-app-ays:latest .
           - name: Add "date-stamp" tag to the image.
