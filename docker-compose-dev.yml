@@ -16,8 +16,8 @@ services:
     container_name: my-awesome-app-test-ays
     image: my-awesome-app-dev-ays_react-app-dev
     depends_on:
-      - react-app-dev
+      - 'react-app-dev'
     volumes:
       - '/app/node_modules'
       - './:/app'
-    command: [ "npm", "run", "test"]
+    command: [ "npm", "test"]
