@@ -1,11 +1,8 @@
 name: Docker Prod Image CI
 
 on:
-  pull_request:
-    branches: [ main ]
-
   push:
-    branches: [ main ]
+    branches: [ main ] #!will need to switch to public release
 
   workflow_dispatch:
 
@@ -14,7 +11,7 @@ env:
 
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -33,3 +30,13 @@ jobs:
               password: ${{ secrets.DOCKER_TOKEN }}
           - name: Push the Docker image to Docker Hub
             run: docker push --all-tags audreyyyschmidt/my-awesome-app-prod-ays
+          - name: Deploy to AWS EBS
+            uses: einaregilsson/beanstalk-deploy@v20
+            with:
+              aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+              aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
+              application_name: my-awesome-app-ays
+              environment_name: Myawesomeappays-env
+              aws_platform: AWS Elastic Beanstalk
+              region: us-east-1
+              

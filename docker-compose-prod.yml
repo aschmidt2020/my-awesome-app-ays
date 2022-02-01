@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  frontend:
+    container_name: my-awesome-app-prod-ays
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '/app/node_modules'
+      - './:/app'
+    ports:
+      - "3002:8080"

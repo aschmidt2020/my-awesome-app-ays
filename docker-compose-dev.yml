@@ -10,7 +10,7 @@ services:
       - '/app/node_modules'
       - './:/app'
     ports:
-      - "3002:3000"
+      - "3002:8080"
   
   react-app-test:
     container_name: my-awesome-app-test-ays
