@@ -6,8 +6,8 @@ on:
 
   workflow_dispatch:
 
-env:
-  DATE_STAMP: $(date +%s)
+# env:
+#   DATE_STAMP: $(date +%s)
 
 jobs:
   # This workflow contains a single job called "build"
@@ -42,7 +42,7 @@ jobs:
               aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
               application_name: my-awesome-app-ays
               environment_name: Myawesomeappays-env
-              version_label: ${{env.DATE_STAMP}}
+              version_label: test v0.2.2
               region: us-east-1
               deployment_package: deploy.zip
               
