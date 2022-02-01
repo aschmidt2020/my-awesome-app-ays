@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 env:
-  DATE_STAMP: $(date+%s)
+  DATE_STAMP: $(date +%s)
 
 jobs:
   # This workflow contains a single job called "build"
