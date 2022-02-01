@@ -1,0 +1,20 @@
+#base image
+FROM node:10 as base
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+#run test
+FROM base as test
+RUN npm install
+COPY . .
+CMD [ "npm", "run", "test" ]
+
+#run app
+FROM base as prod
+RUN npm install
+COPY . .
+ENV APP_PORT 8080
+EXPOSE 8080
+CMD [ "node", "app.js" ]
