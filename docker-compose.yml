@@ -2,12 +2,13 @@ version: '3.9'
 
 services:
   react-app-deploy:
-    container_name: my-awesome-app-prod-ays
-    build: 
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - '/app/node_modules'
-      - './:/app'
+    container_name: my-awesome-app-deploy-ays
+    image: audreyyyschmidt/my-awesome-app-deploy-ays:latest
+    # build: 
+    #   context: .
+    #   dockerfile: Dockerfile
+    # volumes:
+    #   - '/app/node_modules'
+    #   - './:/app'
     ports:
       - "80:8080"
