@@ -30,7 +30,7 @@ jobs:
               username: ${{ secrets.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_TOKEN }}
           - name: Push the Docker image to Docker Hub
-            run: docker push --all-tags my-awesome-app-ays_react-app-deploy
+            run: docker push --all-tags audreyyyschmidt/my-awesome-app-ays_react-app-deploy
           - name: Checkout source code
             uses: actions/checkout@v2
           - name: Generate deployment package
