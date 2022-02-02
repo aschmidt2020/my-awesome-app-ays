@@ -1,8 +1,8 @@
 name: Docker Prod Image CI
 
 on:
-  push:
-    branches: [ main ] #!will need to switch to public release
+  release:
+    types: [published]
 
   workflow_dispatch:
 
