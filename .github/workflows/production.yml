@@ -6,8 +6,8 @@ on:
 
   workflow_dispatch:
 
-# env:
-#   DATE_STAMP: $(date +%s)
+ env:
+   DATE_STAMP: $(date +%s)
 
 jobs:
   # This workflow contains a single job called "build"
@@ -17,8 +17,8 @@ jobs:
 
     steps:
           - uses: actions/checkout@v2
-          # - name: Env variables
-          #   run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB_ENV
+          - name: Env variables
+            run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB_ENV
           - name: Build the Docker image
             # run: docker build -f Dockerfile -t audreyyyschmidt/my-awesome-app-prod-ays:latest .
             run: docker-compose -f docker-compose.yml up -d --build
@@ -42,7 +42,7 @@ jobs:
               aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
               application_name: my-awesome-app-ays
               environment_name: Myawesomeappays-env
-              version_label: test v0.2.2
+              version_label: ${{ env.date-stamp }}
               region: us-east-1
               deployment_package: deploy.zip
               
