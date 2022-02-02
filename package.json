@@ -5,7 +5,8 @@
     "main": "app.js",
     "scripts": {
         "start": "node app.js",
-        "test": "react-scripts test"
+        "test": "react-scripts test",
+        "build": "react-scripts build"
     },
     "author": "Audrey Schmidt",
     "license": "ISC",
